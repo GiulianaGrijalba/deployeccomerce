@@ -9,6 +9,8 @@ const CartView = () => {
     const [cart, setCart] = useState<IProduct[]>([]);
     const [total, setTotal] = useState<number>(0)
 
+    console.log()
+
     useEffect(() => { //-->carga el carrito desde el localSt
         const storedCart: IProduct[] = JSON.parse(localStorage.getItem("cart") || "[]")
         if (storedCart) {
