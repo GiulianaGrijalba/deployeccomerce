@@ -1,19 +1,58 @@
-import { getProductsById } from '@/helpers/products.helper'
-import ProductDetailView from '@/views/ProductDetailView'
-import React from 'react'
+import ProductDetailClient from "@/components/ProductDetailClient";
+
+const ProductDetail = () => {
+  return <ProductDetailClient />;
+};
+
+export default ProductDetail;
 
 
-const ProductDetail:React.FC<{params: {productID: string}}> = async ({params}) => { 
-//es async porque tiene que obtener datos antes de renderizar
-  const {productID} = params
-  const product = await getProductsById(productID)
-  // console.log(product)
-  return (
-    <ProductDetailView {...product}/> //componente, va a mostrar el detalle del producto
-  )
-}
 
-export default ProductDetail
+
+
+
+
+// import { getProductsById } from '@/helpers/products.helper'
+// import ProductDetailView from '@/views/ProductDetailView'
+// import { useParams } from 'next/navigation' // ✅ Importa useParams
+
+// const ProductDetail = async () => { 
+//   const params = useParams() // ✅ Obtiene parámetros correctamente
+//   const productID = params.productID as string // ⚠️ Asegura que es string
+
+//   const product = await getProductsById(productID)
+
+//   return <ProductDetailView {...product} />
+// }
+
+// export default ProductDetail
+
+
+
+
+
+
+
+
+
+
+
+// 'use client'
+// import { getProductsById } from '@/helpers/products.helper'
+// import ProductDetailView from '@/views/ProductDetailView'
+// import { useParams } from 'next/navigation' // ✅ Importa useParams
+
+// const ProductDetail = async () => { 
+//   const params = useParams() // ✅ Obtiene parámetros correctamente
+//   const productID = params.productID as string // ⚠️ Asegura que es string
+
+//   const product = await getProductsById(productID)
+
+//   return <ProductDetailView {...product} />
+// }
+
+// export default ProductDetail
+
 
 
 
